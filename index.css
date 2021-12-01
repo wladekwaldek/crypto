@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.table_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: #a7a4a4 solid 2px;
+}
+
+.cell {
+    width: 12%;
+}
+
+header {
+    margin-bottom: 35px;
+}

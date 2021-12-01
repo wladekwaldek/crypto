@@ -2,16 +2,14 @@ async function getResponse() {
     let response = await fetch('https://api.coincap.io/v2/assets/bitcoin')
     let content = await response.json()
 
-    let a = document.querySelector('.coin')
+    console.log(content)
 
-    let key;
+    let coin = document.querySelector('.coin')
+    let price = document.querySelector('.price')
 
-    for(key in content) {
-        a.innerHTML += `
-            <h1>${content[key].name}</h1>
-            <p>${content[key].priceUsd}</p>
-        `
-    }
+    coin.innerHTML = `${content.data.name}`
+    price.innerHTML = `${Math.floor(content.data.priceUsd * 100) / 100}`
+    
 }
 
-getResponse()
+setInterval(() => getResponse(), 5000)   
