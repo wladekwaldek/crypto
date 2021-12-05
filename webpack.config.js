@@ -1,5 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -19,7 +20,11 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: 'index.html'
-        })
+        }),
+        new CopyPlugin({patterns:[{
+            from: path.resolve(__dirname, 'src/img'),
+            to: path.resolve(__dirname, 'dist/img/')
+        }]})
     ], 
     module: {
         rules: [
