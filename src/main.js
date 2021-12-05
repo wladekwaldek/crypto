@@ -1,4 +1,4 @@
-import './index.css'
+
 
 async function getResponse() {
     let response = await fetch('https://api.coincap.io/v2/assets/bitcoin')
